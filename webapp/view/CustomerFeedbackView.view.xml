@@ -1,19 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mvc:View xmlns:mvc="sap.ui.core.mvc"
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
   xmlns:layout="sap.ui.layout"
   xmlns:form="sap.ui.layout.form"
   xmlns:core="sap.ui.core"
-  xmlns:richtexteditor="sap.ui.richtexteditor"
-  xmlns:viz="sap.viz.ui5"
-  controllerName="preview.app.controller.CustomerFeedbackView"
-  displayBlock="true">
-  <Page title="CustomerFeedbackView" enableScrolling="true">
+  controllerName="converted.customerfeedbackview.controller.CustomerFeedbackView"
+  displayBlock="true"
+  busyIndicatorDelay="0"
+          xmlns:commons="sap.ui.commons">
+  <Page title="Customer Feedback Form" enableScrolling="true">
     <content>
       <Title id="title_ccn6gehc" text="Customer Feedback Form"/>
-      <form:SimpleForm id="formContainer">
+      <form:SimpleForm id="formContainer"
+        editable="true"
+        layout="ResponsiveGridLayout"
+        title="Customer Feedback">
         <form:content>
-          <!-- Empty SimpleForm content -->
+          <Label text="Name" labelFor="inputFieldName"/>
+          <Input id="inputFieldName"
+            value="{/Customer/Name}"
+            placeholder="Enter your name"
+            ariaLabelledBy="nameLabel"
+            width="100%"/>
+
+          <Label text="Email" labelFor="inputFieldEmail"/>
+          <Input id="inputFieldEmail"
+            value="{/Customer/Email}"
+            placeholder="Enter your email"
+            type="Email"
+            ariaLabelledBy="emailLabel"
+            width="100%"/>
+
+          <Label text="Rating (1-5 stars)" labelFor="dropDownRating"/>
+          <Select id="dropDownRating"
+            selectedKey="{/Feedback/Rating}"
+            forceSelection="false"
+            width="100%">
+            <core:Item text="1 Star" key="1"/>
+            <core:Item text="2 Stars" key="2"/>
+            <core:Item text="3 Stars" key="3"/>
+            <core:Item text="4 Stars" key="4"/>
+            <core:Item text="5 Stars" key="5"/>
+          </Select>
+
+          <Label text="Service Quality"/>
+          <HBox>
+            <CheckBox id="checkboxSpeed" text="Speed" selected="{/Feedback/Speed}"/>
+            <CheckBox id="checkboxAccuracy" text="Accuracy" selected="{/Feedback/Accuracy}"/>
+            <CheckBox id="checkboxFriendliness" text="Friendliness" selected="{/Feedback/Friendliness}"/>
+          </HBox>
+
+          <Label text="Comments" labelFor="inputFieldComment"/>
+           <TextArea id="inputFieldComment"
+            value="{/Feedback/Comment}"
+            placeholder="Enter your comments here"
+            rows="5"
+            width="100%"/>
+
+          <Button id="buttonSubmit" text="Submit" press="onSubmit" type="Emphasized"/>
         </form:content>
       </form:SimpleForm>
     </content>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebDynpro xmlns="http://www.sap.com/wd/webdynpro">
+  <View name="CustomerFeedbackView">
+    <Title>Customer Feedback Form</Title>
+    <FormContainer id="formContainer">
+      <!-- Customer Info -->
+      <FormElement id="formElementCustomerName">
+        <Label text="Name" />
+        <InputField id="inputFieldName" value="{/Customer/Name}" />
+      </FormElement>
+      <FormElement id="formElementCustomerEmail">
+        <Label text="Email" />
+        <InputField id="inputFieldEmail" value="{/Customer/Email}" />
+      </FormElement>
+      <!-- Rating -->
+      <FormElement id="formElementRating">
+        <Label text="Rating (1-5 stars)" />
+        <!--  WebDynpro doesn't have a direct star rating control.  Simulate with dropdown -->
+        <DropDownByIndex id="dropDownRating" value="{/Feedback/Rating}">
+          <items>
+            <item text="1 Star" key="1"/>
+            <item text="2 Stars" key="2"/>
+            <item text="3 Stars" key="3"/>
+            <item text="4 Stars" key="4"/>
+            <item text="5 Stars" key="5"/>
+          </items>
+        </DropDownByIndex>
+      </FormElement>
+      <!-- Service Quality -->
+      <FormElement id="formElementServiceQuality">
+        <Label text="Service Quality" />
+        <Checkbox id="checkboxSpeed" text="Speed" selected="{/Feedback/Speed}"/>
+        <Checkbox id="checkboxAccuracy" text="Accuracy" selected="{/Feedback/Accuracy}"/>
+        <Checkbox id="checkboxFriendliness" text="Friendliness" selected="{/Feedback/Friendliness}"/>
+
+      </FormElement>
+      <!-- Comment -->
+      <FormElement id="formElementComment">
+        <Label text="Comments" />
+        <TextView id="textViewComment" text="{/Feedback/Comment}" />
+      </FormElement>
+      <FormElement id="formElementCommentInput">
+        <Label text="Enter your comments here:" />
+        <InputField id="inputFieldComment" value="{/Feedback/Comment}" multiline="true" width="400px" height="100px"/>
+      </FormElement>
+
+
+      <!-- Submit Button -->
+      <Button id="buttonSubmit" text="Submit" press="onSubmit" />
+      <MessageArea id="messageArea" />
+    </FormContainer>
+  </View>
+  <Controller name="CustomerFeedbackViewController">
+    <method name="onSubmit">
+      <!--Implementation to handle submission and display thank you message -->
+      <![CDATA[
+        // Get values from input fields
+        wdContext.nodeCustomer.bind(wdThis.wdContext.nodeCustomer.createNode());
+        wdContext.nodeCustomer.currentCustomer.setName(wdContext.nodeCustomer.currentCustomer.getName());
+        wdContext.nodeCustomer.currentCustomer.setEmail(wdContext.nodeCustomer.currentCustomer.getEmail());
+
+        wdContext.nodeFeedback.bind(wdThis.wdContext.nodeFeedback.createNode());
+        wdContext.nodeFeedback.currentFeedback.setRating(wdContext.nodeFeedback.currentFeedback.getRating());
+        wdContext.nodeFeedback.currentFeedback.setSpeed(wdContext.nodeFeedback.currentFeedback.getSpeed());
+        wdContext.nodeFeedback.currentFeedback.setAccuracy(wdContext.nodeFeedback.currentFeedback.getAccuracy());
+        wdContext.nodeFeedback.currentFeedback.setFriendliness(wdContext.nodeFeedback.currentFeedback.getFriendliness());
+        wdContext.nodeFeedback.currentFeedback.setComment(wdContext.nodeFeedback.currentFeedback.getComment());
+
+
+        // Submit data (replace with actual submission logic)
+        // ...
+
+        // Show thank you message
+        wdComponentAPI.getMessageManager().reportSuccess("Thank you for your feedback!");
+      ]]>
+    </method>
+  </Controller>
+</WebDynpro>

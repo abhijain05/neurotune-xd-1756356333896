@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "ProductID": "PROD-20001",
+      "Name": "Laptop X1",
+      "Description": "High-performance laptop with 16GB RAM and 512GB SSD",
+      "Category": "Electronics",
+      "Price": 1299.99,
+      "Currency": "$",
+      "InventoryStatus": "In Stock",
+      "ImageURL": "images/laptop_x1.jpg"
+    },
+    {
+      "ProductID": "PROD-20002",
+      "Name": "Office Chair Ergonomic",
+      "Description": "Ergonomic office chair with adjustable lumbar support",
+      "Category": "Furniture",
+      "Price": 249.5,
+      "Currency": "$",
+      "InventoryStatus": "Low Stock",
+      "ImageURL": "images/office_chair.jpg"
+    },
+    {
+      "ProductID": "PROD-20003",
+      "Name": "Wireless Mouse Pro",
+      "Description": "Wireless mouse with precise tracking and comfortable grip",
+      "Category": "Electronics",
+      "Price": 39.99,
+      "Currency": "$",
+      "InventoryStatus": "In Stock",
+      "ImageURL": "images/wireless_mouse.jpg"
+    },
+    {
+      "ProductID": "PROD-20004",
+      "Name": "Desk Lamp LED",
+      "Description": "LED desk lamp with adjustable brightness and color temperature",
+      "Category": "Furniture",
+      "Price": 59,
+      "Currency": "$",
+      "InventoryStatus": "Out of Stock",
+      "ImageURL": "images/desk_lamp.jpg"
+    },
+    {
+      "ProductID": "PROD-20005",
+      "Name": "External Hard Drive 1TB",
+      "Description": "Portable external hard drive with 1TB storage capacity",
+      "Category": "Electronics",
+      "Price": 79.95,
+      "Currency": "$",
+      "InventoryStatus": "In Stock",
+      "ImageURL": "images/external_hard_drive.jpg"
+    },
+    {
+      "ProductID": "PROD-20006",
+      "Name": "Monitor 27-inch 4K",
+      "Description": "27-inch 4K monitor with high resolution and wide color gamut",
+      "Category": "Electronics",
+      "Price": 399,
+      "Currency": "$",
+      "InventoryStatus": "In Stock",
+      "ImageURL": "images/monitor_4k.jpg"
+    },
+    {
+      "ProductID": "PROD-20007",
+      "Name": "Keyboard Mechanical",
+      "Description": "Mechanical keyboard with customizable RGB lighting",
+      "Category": "Electronics",
+      "Price": 129.99,
+      "Currency": "$",
+      "InventoryStatus": "Low Stock",
+      "ImageURL": "images/mechanical_keyboard.jpg"
+    },
+    {
+      "ProductID": "PROD-20008",
+      "Name": "Webcam HD",
+      "Description": "HD webcam with built-in microphone for video conferencing",
+      "Category": "Electronics",
+      "Price": 49.5,
+      "Currency": "$",
+      "InventoryStatus": "In Stock",
+      "ImageURL": "images/webcam_hd.jpg"
+    },
+    {
+      "ProductID": "PROD-20009",
+      "Name": "Printer Laser",
+      "Description": "Laser printer with fast printing speed and high-quality output",
+      "Category": "Electronics",
+      "Price": 199,
+      "Currency": "$",
+      "InventoryStatus": "In Stock",
+      "ImageURL": "images/laser_printer.jpg"
+    },
+    {
+      "ProductID": "PROD-20010",
+      "Name": "Standing Desk",
+      "Description": "Adjustable standing desk with electric height adjustment",
+      "Category": "Furniture",
+      "Price": 499.99,
+      "Currency": "$",
+      "InventoryStatus": "Out of Stock",
+      "ImageURL": "images/standing_desk.jpg"
+    }
+  ]
+}
